@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import GenderDropdown from './GenderDropdown';
 
-function App() {
+// import ChartWrapper from './newChartWrapper';
+import ChartWrapper from './ChartWrapper';
+
+
+const App = () => {
+
+  const [gender, setGender] = useState('men');
+
+  const genderSelected = (event) => {
+    setGender(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <div className='container'>
+        <h3>Bar chart</h3>
+        <GenderDropdown genderSelected={event => genderSelected(event)} />
+        <ChartWrapper gender={gender} />
+
+      </div>
     </div>
   );
 }
+
 
 export default App;
