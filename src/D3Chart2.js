@@ -44,17 +44,16 @@ export default class D3Chart {
          vis.menData = datasets[0];
          vis.womenData = datasets[1];
          vis.update('men');
-         // const [men, women] = datasets;
-         // let flag = true;
 
-         // // initialize data the first time, so there isn't a 1 sec delay before data appears
-         // vis.data = men;
-         // vis.update();
+         // Optional Code that changes datasets every 1 sec
+         // let dataset = 'men';
+         // let flag = true;
+         // vis.update(dataset);
 
          // d3.interval(() => {
-         //    vis.data = flag ? men : women;
-         //    vis.update();
-         //    vis.xLabel.text(`The world's tallest ${gender}`);
+         //    dataset = flag ? 'men' : 'women';
+         //    vis.update(dataset);
+         //    vis.xLabel.text(`The world's tallest ${dataset}`);
          //    flag = !flag;
          // }, 1000);
 

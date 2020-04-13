@@ -7,11 +7,13 @@ const NewChartWrapper = (props) => {
    const [chart, setChart] = useState(null);
 
    useEffect(() => {
-      setChart(new D3Chart(chartRef.current))
+      setChart(new D3Chart(chartRef.current));
    }, []);
 
    useEffect(() => {
-      setChart(chartRef.current);
+      if (chart !== null) {
+         chart.update(props.gender);
+      }
    }, [props.gender]);
 
 
