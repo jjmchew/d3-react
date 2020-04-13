@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import GenderDropdown from './GenderDropdown';
 
-// import ChartWrapper from './newChartWrapper';
-import ChartWrapper from './ChartWrapper';
+import ChartWrapper from './newChartWrapper';
+// import ChartWrapper from './ChartWrapper';
 
 
 const App = () => {

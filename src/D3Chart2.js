@@ -40,7 +40,7 @@ export default class D3Chart {
          d3.json(url),
          d3.json(url2)
       ]).then((datasets) => {
-         console.log(datasets);
+         console.log('.THEN promise', datasets);
          vis.menData = datasets[0];
          vis.womenData = datasets[1];
          vis.update('men');
@@ -71,6 +71,7 @@ export default class D3Chart {
    }
 
    update(gender) {
+      console.log('d3chart2 update ', gender);
       const vis = this;
 
       vis.data = (gender === 'men') ? vis.menData : vis.womenData;

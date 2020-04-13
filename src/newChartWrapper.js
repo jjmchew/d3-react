@@ -7,15 +7,16 @@ const NewChartWrapper = (props) => {
    const [chart, setChart] = useState(null);
 
    useEffect(() => {
-      setChart(new D3Chart(chartRef))
+      setChart(new D3Chart(chartRef.current))
    }, []);
 
    useEffect(() => {
-      setChart(chartRef);
+      setChart(chartRef.current);
    }, [props.gender]);
 
+
    return (
-      <div ref={chartRef}>{chart}</div>
+      <div ref={chartRef}></div>
    )
 
 }
